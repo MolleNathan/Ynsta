@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171106091747) do
 
   create_table "categories", force: :cascade do |t|
@@ -37,6 +38,25 @@ ActiveRecord::Schema.define(version: 20171106091747) do
     t.string "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "picture"
+    t.integer "user_id"
+    t.integer "tag_id"
+    t.integer "categorie_id"
+=======
+ActiveRecord::Schema.define(version: 20171106091219) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "picture"
+    t.integer "user_id"
+    t.integer "tag_id"
+    t.integer "categorie_id"
+>>>>>>> 7567556aa410bba21830fede5cf9fbe3a6773b2a
   end
 
 end
