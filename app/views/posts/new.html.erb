@@ -1,0 +1,20 @@
+<%= form_tag posts_path do %>
+  <h2>Ajouter une image:</h2>
+  <p><br></p>
+  Categorie :
+  <select name="post[category_id]">
+    <% Category.all.each do |category| %>
+      <option value="<%= category.name %>"><%= category.name %></option>
+    <% end %>
+  </select>
+  <br><br>
+  Tags:
+  <br><br>
+  <% Tag.all.each do |tag| %>
+    <input type="checkbox" name="post[tag_ids][]" value="<%= tag.name %>"><%= tag.name %><br>
+  <% end %>
+  <br><br>
+  <input type="file" name="post[image]" accept="image/*">
+  <br><br>
+  <input type="submit">
+<% end %>
