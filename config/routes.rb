@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  get '/upload', to: 'posts#new'
+
 end

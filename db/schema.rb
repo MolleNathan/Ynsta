@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106092454) do
+ActiveRecord::Schema.define(version: 20171106140031) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -25,12 +25,15 @@ ActiveRecord::Schema.define(version: 20171106092454) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "post_tags", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.string "title"
     t.string "picture"
     t.integer "user_id"
-    t.integer "tag_id"
-    t.integer "categorie_id"
+    t.integer "category_id"
   end
 
   create_table "tags", force: :cascade do |t|
