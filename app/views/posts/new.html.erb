@@ -1,10 +1,19 @@
 <%= form_tag posts_path, multipart: true do %>
+
+  <% if defined? @post %>
+    <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <br><br>
   <h2>Ajouter une image:</h2>
-  <p><br></p>
+  <p><br>
   Categorie :
   <select name="post[category_id]">
     <% Category.all.each do |category| %>
-      <option value="<%= category.name %>"><%= category.name %></option>
+      <option value="<%= category.id %>"><%= category.name %></option>
     <% end %>
   </select>
   <br><br>
