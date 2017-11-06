@@ -8,23 +8,23 @@
         %h2.title
           %a{:href => root_path} People
           %a{:href => root_path} Travel
-      .col-xs-8.col-xs-offset-2
+          %a{:href => root_path} Food
+      .col-xs-4.col-xs-offset-1
         =form_tag posts_path, method: :get, class: 'form form-horizontal' do
           .form-group
-            .col-xs-10
+            .col-xs-5
               = text_field_tag 'keywords', nil, class: 'form-control', placeholder: "search"
             .col-xs-2
               = submit_tag "search", class: 'btn btn-success'
-      .col-xs-10
+      .col-xs-4
         %div.pull-right
           - if user_signed_in?
             %a.logout{href: destroy_user_session_path, data: {method: 'delete'}}
               = t('logout')
             %a.my-account{href: '#'}
               = t('my_account')
-            - if current_user.is_admin?
-              %a.administration{href: rails_admin_path}
-                = t('administration')
           - else
             %a.my-account{href: new_user_session_path}
-              = t('sign_in')
+              = 'Connexion'
+            %a.my-account{href: new_user_registration_path}
+              = 'Inscription'
