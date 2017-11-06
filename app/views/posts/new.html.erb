@@ -1,4 +1,13 @@
 <%= form_tag posts_path, multipart: true do %>
+
+  <% if defined? @post %>
+    <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <br><br>
   <h2>Ajouter une image:</h2>
   <p><br></p>
   Categorie :
