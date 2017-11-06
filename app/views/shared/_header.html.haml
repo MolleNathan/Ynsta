@@ -23,6 +23,8 @@
               = t('logout')
             %a.my-account{href: '#'}
               = t('my_account')
+            %a{href: new_post_path}
+              = 'Uploader une image'
           - else
             %a.my-account{href: new_user_session_path}
               = 'Connexion'
