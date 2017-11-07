@@ -1,15 +1,20 @@
 <div class='container'>
   <div class='row'>
-    <% @post.last(6).each do |post| %>
+    <% @posts.last(6).each do |post| %>
       <div class='col-xs-4'>
         <div class='image'>
           <%= image_tag post.picture %>
           <div class='overlay'>
 
             <div class='heart'>
-              <%= image_tag("empty_heart.svg", size: "2x2") %>
+              <%= heart("white") %>
             </div>
-            
+
+            <!-- <div class='heart'>
+              <%= image_tag("full_heart.jpg", size: "2x2") %>
+            </div> -->
+
+
           </div>
         </div>
       </div>
