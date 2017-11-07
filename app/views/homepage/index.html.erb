@@ -1,4 +1,4 @@
-<% @post.last(6).each do |post| %>
+<% Post.last(6).each do |post| %>
 
   <%= image_tag post.picture %>
   <%= stylesheet_link_tag "post_overlay.css" %>

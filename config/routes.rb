@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   get '/upload', to: 'posts#new'
 
+  get '/people', to: 'posts#people'
+  get '/food', to: 'posts#food'
+  get '/travel', to: 'posts#travel'
+
 end
