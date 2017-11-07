@@ -10,6 +10,8 @@ class Post < ApplicationRecord
       Post.where(['category_id = ?', args[:category_id]])
     elsif args[:tag_id]
       Post.joins(:post_tags).where(["post_tags.tag_id= ?", args[:tag_id]])
+    elsif args[:user_id]
+      Post.where(user_id: args[:user_id])
     else
       Post.where(['category_id = 1'])
     end
