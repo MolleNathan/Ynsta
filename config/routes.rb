@@ -3,16 +3,18 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-  root "posts#people"
+  root "posts#index"
 
   resources :posts
 
   get '/upload', to: 'posts#new'
+  get 'categories/:category_id', to: 'posts#index', as: 'category'
+  get 'tags/:tag_id', to: 'posts#index', as: 'tag'
 
-  get '/people', to: 'posts#people'
-  get '/food', to: 'posts#food'
-  get '/travel', to: 'posts#travel'
-
-  get '/user/post', to: 'posts#user'
+  # get '/people', to: 'posts#people'
+  # get '/food', to: 'posts#food'
+  # get '/travel', to: 'posts#travel'
+  #
+  # get '/user/post', to: 'posts#user'
 
 end

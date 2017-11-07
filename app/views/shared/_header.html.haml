@@ -6,11 +6,11 @@
           %a{:href => root_path} Ynov
       .col-xs-3
         %h2.title
-          %a{:href => people_path} People
-          %a{:href => travel_path} Travel
-          %a{:href => food_path} Food
+          - Category.all.each do |category|
+            %a{href: category_path(category.id)}= category.name
+
       .col-xs-4.col-xs-offset-0
-        =form_tag posts_path, method: :get, class: 'form form-horizontal' do
+        = form_tag posts_path, method: :get, class: 'form form-horizontal' do
           .form-group
             .col-xs-5
               = text_field_tag 'keywords', nil, class: 'form-control', placeholder: "search"
@@ -25,10 +25,8 @@
           - if user_signed_in?
             %a.logout{href: destroy_user_session_path, data: {method: 'delete'}}
               = t('logout')
-            %a.my-account{href: user_post_path}
-              = t('my_account')
-            %a{href: new_post_path}
-              = 'Uploader une image'
+            /%a.my-account{href: user_post_path}
+            /  = t('my_account')
           - else
             %a.my-account{href: new_user_session_path}
               = 'Connexion'
