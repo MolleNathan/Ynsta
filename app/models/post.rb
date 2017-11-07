@@ -8,8 +8,10 @@ class Post < ApplicationRecord
   def self.search(args)
     if args[:category_id]
       Post.where(['category_id = ?', args[:category_id]])
+    elsif args[:tag_id]
+      Post.where(['tag_id = ?', args[:tag_id]])
     else
-      Post.all
+      Post.where(['category_id = 1'])
     end
   end
 end
