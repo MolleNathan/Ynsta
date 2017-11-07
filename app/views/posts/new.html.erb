@@ -20,7 +20,7 @@
   Tags:
   <br><br>
   <% Tag.all.each do |tag| %>
-    <input type="checkbox" name="post[tag_ids][]" value="<%= tag.name %>"><%= tag.name %><br>
+    <input type="checkbox" name="post[tag_ids][]" value="<%= tag.id %>"><%= tag.name %><br>
   <% end %>
   <br><br>
   <input type="file" name="post[picture]" accept="image/*">

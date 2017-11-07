@@ -53,11 +53,13 @@ class PostsController < ApplicationController
 
   private
   def post_params
-
     params.require(:post)
           .permit(
             :category_id,
-            :picture
+            :picture,
+            tag_ids: []
           ).merge(user_id: current_user.id)
   end
+
+
 end
