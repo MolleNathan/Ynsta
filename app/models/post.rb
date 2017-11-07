@@ -9,10 +9,11 @@ class Post < ApplicationRecord
     if args[:category_id]
       Post.where(['category_id = ?', args[:category_id]])
     elsif args[:tag_id]
-      Post.where(id: PostTag.where(tag_id: args[:tag_id]))
-      #Post.where(['tag_id = ?', args[:tag_id]])
+      Post.joins(:post_tags).where(["post_tags.tag_id= ?", args[:tag_id]])
     else
       Post.where(['category_id = 1'])
     end
   end
+
+
 end
