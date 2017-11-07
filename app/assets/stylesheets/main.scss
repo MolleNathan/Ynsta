@@ -172,3 +172,27 @@ form.busy {
   color: #000;
   margin-right: 10px;
 }
+.image {
+  position: relative;
+  width: 408px;
+  height: 272px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  img {
+    min-width: 408px;
+    min-height: 272px;
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+  /*  .heart {
+      max-width: 20px;
+      max-height: 20px;
+    }*/
+  }
+}

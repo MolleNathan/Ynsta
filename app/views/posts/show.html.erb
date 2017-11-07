@@ -1,6 +1,18 @@
-<% @post.last(6).each do |post| %>
+<div class='container'>
+  <div class='row'>
+    <% @post.last(6).each do |post| %>
+      <div class='col-xs-4'>
+        <div class='image'>
+          <%= image_tag post.picture %>
+          <div class='overlay'>
 
-  <%= image_tag post.picture %>
-  <%= stylesheet_link_tag "post_overlay.css" %>
-
-<% end %>
+            <div class='heart'>
+              <%= image_tag("empty_heart.svg", size: "2x2") %>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
