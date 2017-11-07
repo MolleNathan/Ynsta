@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/upload', to: 'posts#new'
   get 'categories/:category_id', to: 'posts#index', as: 'category'
   get 'tags/:tag_id', to: 'posts#index', as: 'tag'
+  get 'users/:user_id', to: 'posts#index', as: 'user'
 
   # get '/people', to: 'posts#people'
   # get '/food', to: 'posts#food'
