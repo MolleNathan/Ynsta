@@ -5,15 +5,16 @@
         <div class='image'>
           <%= image_tag post.picture %>
           <div class='overlay'>
-
             <div class='heart'>
               <%= heart("white") %>
-            </div>
-            
 
-            <!-- <div class='heart'>
-              <%= image_tag("full_heart.jpg", size: "2x2") %>
-            </div> -->
+            </div>
+
+
+            <% post.tags.each do |tag| %>
+
+            <% display_tag(tag) %>
+            <% end %>
 
 
           </div>

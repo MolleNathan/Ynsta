@@ -7,4 +7,7 @@ module ApplicationHelper
       </svg>".html_safe
   end
 
+  def display_tag(tag_params)
+      out= "<p>"+tag_params.name+"</p>".html_safe
+  end
 end
