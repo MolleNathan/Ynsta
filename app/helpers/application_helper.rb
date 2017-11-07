@@ -7,4 +7,7 @@ module ApplicationHelper
       </svg>".html_safe
   end
 
+  def display_tags(post_param)
+    
+  end
 end
