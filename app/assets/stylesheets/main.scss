@@ -6,17 +6,15 @@ body {
     background-size: cover;
   }
 }
+
+.tag {
+  color: #500
+}
 h1, h2, h3 {
   font-family: 'Dosis', sans-serif;
   color: #000;
 }
-table tr td {
-  color: #000;
-}
-table tr th {
-  background-color: #2b3e50;
-  color: #fff;
-}
+
 form .description {
   height: 200px;
 }

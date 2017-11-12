@@ -6,16 +6,16 @@
           <%= image_tag post.picture %>
           <div class='overlay'>
             <div class='heart'>
-              <%= heart("white") %>
+
+            <%= heart("white") %>
+            <% post.tags.each do |tag| %>
+            <div >
+              <%= tag.name %>
 
             </div>
-
-
-            <% post.tags.each do |tag| %>
-
-            <% display_tag(tag) %>
             <% end %>
 
+            </div>
 
           </div>
         </div>
