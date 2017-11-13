@@ -13,7 +13,7 @@
         = form_tag posts_path, method: :get, class: 'form form-horizontal' do
           .form-group
             .col-xs-5
-              = text_field_tag 'keywords', nil, class: 'form-control', placeholder: "search"
+              = text_field_tag 'tag_id', nil, class: 'form-control', placeholder: "search"
             .col-xs-2
               = submit_tag "search", class: 'btn btn-success'
 

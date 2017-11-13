@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def index
+
     @posts = Post.search(params)
   end
 

@@ -8,6 +8,7 @@ module ApplicationHelper
   end
 
   def display_tag(tag_params)
-      out= "<p>"+tag_params.name+"</p>".html_safe
+      tag_params.name
+
   end
 end
