@@ -7,7 +7,15 @@
           <div class='overlay'>
             <div class='heart'>
 
-            <%= heart("white") %>
+            <% if (!user_signed_in?) %>
+              <%= link_to image_tag(heart("white")), "http://www.mysite.com/" %>
+            <% elsif (Favorite.where("user_id = ?", :user_id).where("post_id = ?", :post_id).length > 0) %>
+              <%= link_to image_tag(heart("white")), "http://www.mysite.com/" %>
+            <% else %>
+              heart("white")
+              <!-- <%= link_to image_tag(heart("white")), "http://www.mysite.com/" %> -->
+            <% end %>
+
             <% post.tags.each do |tag| %>
             <div >
               <%= tag.name %>
