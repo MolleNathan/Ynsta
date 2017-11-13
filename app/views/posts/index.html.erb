@@ -7,6 +7,7 @@
           <div class='overlay'>
             <div class='heart'>
 
+              <!-- CONTIENT UNE ERREUR QUE J'AI DU MAL À GÉRER -->
             <% if (!user_signed_in?) %>
               <%= link_to image_tag(heart("white")), "http://www.mysite.com/" %>
             <% elsif (Favorite.where("user_id = ?", :user_id).where("post_id = ?", :post_id).length > 0) %>
@@ -20,11 +21,11 @@
             <div >
               <%= tag.name %>
 
+
             </div>
+            <% post.tags.each do |tag| %>
+            <%= link_to(tag.name, "/posts?tag_id=#{tag.name}&commit=search") %>
             <% end %>
-
-            </div>
-
           </div>
         </div>
       </div>
