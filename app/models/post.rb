@@ -9,8 +9,13 @@ class Post < ApplicationRecord
     if args[:category_id]
       Post.where(['category_id = ?', args[:category_id]])
     elsif args[:tag_id]
-      @tag = Tag.where(['name like ?', args[:tag_id]])
-      Post.joins(:post_tags).where(['post_tags.tag_id = ?', @tag.ids])
+        if args[:tag_id].is_a? Integer
+          Post.joins(:post_tags).where(['post_tags.tag_id = ?', args[:tag_id]])
+        else
+          @tag = Tag.where(['name like ?', args[:tag_id]])
+          Post.joins(:post_tags).where(['post_tags.tag_id = ?', @tag.ids])
+        end
+
     elsif args[:user_id]
       Post.where(user_id: args[:user_id])
     else
